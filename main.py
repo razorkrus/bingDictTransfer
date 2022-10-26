@@ -10,7 +10,7 @@ import time
 import argparse
 
 
-def parse_xml(file_name, unit_name, property_name):
+def parse_xml(file_name, unit_name, property_name) -> set:
     """
     Parse the xml format file, and extract the required property text while iterating on all qualified unit.
     The result is saved in a set and returned.
@@ -26,7 +26,7 @@ def parse_xml(file_name, unit_name, property_name):
     return res
 
 
-def compare_voca(bing_file, youdao_file, print_intersection=False):
+def compare_voca(bing_file, youdao_file, print_intersection=False) -> list:
     bing_para = ['WordUnit', 'HeadWord']
     youdao_para = ['item', 'word']
     bing_voca = parse_xml(bing_file, *bing_para)
